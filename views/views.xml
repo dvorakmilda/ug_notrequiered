@@ -1,0 +1,100 @@
+<odoo>
+  <data>
+
+        <record id="reqhrtimesheetanalytic_view_tree" model="ir.ui.view">
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.timesheet_view_tree_user"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                      <attribute name="invisible">"1"</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="reqhrtimesheetanalytic_line_form" model="ir.ui.view">
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                      <attribute name="invisible">"1"</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="reqhrtimesheetanalytic_line_search" model="ir.ui.view">
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                      <attribute name="invisible">"1"</attribute>
+                </field>
+            </field>
+        </record>
+    
+
+        <record id="reqhrtimesheetanalytic_line_tree" model="ir.ui.view">
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                      <attribute name="invisible">"1"</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="reqhrtimesheetanalytic_shteet_form" model="ir.ui.view">
+          <field name="model">account.analytic.line</field>
+          <field name="inherit_id" ref="odoo_timesheet_sheet.hr_timesheet_sheet_form"/>
+          <field name="arch" type="xml">
+              <xpath expr="//detail[@t-foreach='name']" position="attributes">
+                  <attribute name="invisible">"1"</attribute>
+              </xpath>
+          </field>
+      </record>
+
+
+
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="ug_notrequiered.action_window">
+      <field name="name">ug_notrequiered window</field>
+      <field name="res_model">ug_notrequiered.ug_notrequiered</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="ug_notrequiered.action_server">
+      <field name="name">ug_notrequiered server</field>
+      <field name="model_id" ref="model_ug_notrequiered_ug_notrequiered"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="ug_notrequiered" id="ug_notrequiered.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="ug_notrequiered.menu_1" parent="ug_notrequiered.menu_root"/>
+    <menuitem name="Menu 2" id="ug_notrequiered.menu_2" parent="ug_notrequiered.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="ug_notrequiered.menu_1_list" parent="ug_notrequiered.menu_1"
+              action="ug_notrequiered.action_window"/>
+    <menuitem name="Server to list" id="ug_notrequiered" parent="ug_notrequiered.menu_2"
+              action="ug_notrequiered.action_server"/>
+    -->
+  </data>
+</odoo>
